@@ -243,6 +243,7 @@ public class Connection {
         this.changeConnectionStatus(ConnectionStatus.CONNECTING);
 
         conOpt.setCleanSession(true);
+
 //        conOpt.setConnectionTimeout(timeout);
 //        conOpt.setKeepAliveInterval(keepalive);
 //        if (!username.equals(ActivityConstants.empty)) {
@@ -273,14 +274,14 @@ public class Connection {
 
 
         //set traceCallback
-        client.setTraceCallback(new MqttTraceCallback());
+//        client.setTraceCallback(new MqttTraceCallback());
 
         this.addConnectionOptions(conOpt);
         if (doConnect) {
             try {
 
 
-                client.connect(conOpt, null, callback);
+                client.connect(null, callback);
 
 
             } catch (MqttException e) {
@@ -291,17 +292,6 @@ public class Connection {
 
 
 
-        try {
-            String topic= ActivityConstants.locationTopic;
-            String[] topics = new String[1];
-            topics[0] = topic;
-            client.subscribe(topic, 1);
-        } catch (MqttException e) {
-            e.printStackTrace();
-        } catch (NullPointerException e)
-        {
-            e.printStackTrace();
-        }
     }
 
     /**

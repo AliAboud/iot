@@ -17,7 +17,7 @@ public class Application extends android.app.Application{
         super.onCreate();
         android_id=Settings.Secure.getString(getBaseContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID);
-        Connection.createConnection(android_id, getBaseContext(), true);
+        Connection.createConnection(android_id, getBaseContext(), false);
 
         Connection.getInstance().connect();
     }

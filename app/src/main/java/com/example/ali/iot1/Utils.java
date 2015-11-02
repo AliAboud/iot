@@ -11,7 +11,6 @@ public class Utils {
     public static String getDeviceId(Context context) {
         String deviceId = Settings.Secure.getString(context.getContentResolver(),
                 Settings.Secure.ANDROID_ID);
-        Toast.makeText(context, deviceId, Toast.LENGTH_SHORT).show();
         return deviceId;
 
 }

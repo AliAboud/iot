@@ -169,7 +169,7 @@ public class ActivityConstants {
     /**
      * Location Topic String for comparisons *
      */
-    static final String locationTopic= "iot/location/coordinates";
+    static final String locationTopic= "iot/location";
 
 
 }

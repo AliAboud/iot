@@ -144,7 +144,7 @@ class ActionListener implements IMqttActionListener {
         Connection c = Connection.getInstance();
         c.changeConnectionStatus(Connection.ConnectionStatus.DISCONNECTED);
         String actionTaken = context.getString(R.string.toast_disconnected);
-
+        Notify.toast(context,actionTaken,Toast.LENGTH_LONG);
 
     }
 
@@ -158,6 +158,7 @@ class ActionListener implements IMqttActionListener {
         Connection c = Connection.getInstance();
         c.changeConnectionStatus(Connection.ConnectionStatus.CONNECTED);
 
+        Notify.toast(context,"Connected",Toast.LENGTH_LONG);
     }
 
     /**

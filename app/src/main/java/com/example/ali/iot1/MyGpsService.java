@@ -83,7 +83,7 @@ public class MyGpsService extends Service {
 // This listener will catch and disseminate location updates
             myLocationListener = new GPSListener(getBaseContext());
 // define update frequency for GPS readings
-            long minTime = 0; // best time: 5*60*1000 (5min)
+            long minTime = 10*1000; // best time: 5*60*1000 (5min)
             float minDistance = 5; // 5 meters
 // request GPS updates
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,
